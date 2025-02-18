@@ -53,16 +53,16 @@
         "placeholder": "Rate pain level"
       },
       {
-        "id": "pain_type",
-        "question": "Pain Type",
+        "id": "neurological_symptoms",
+        "question": "Neurological Symptoms",
         "answer_type": "checkbox",
-        "options": ["Sharp shooting", "Dull aching"]
+        "options": ["Weakness", "Numbness", "Coordination Problems"]
       },
       {
-        "id": "affected_joints",
-        "question": "Affected Joint/Joints",
-        "answer_type": "checkbox",
-        "options": ["Knee", "Hip", "Spine", "Shoulder", "Other"]
+        "id": "affected_limbs",
+        "question": "Affected Limbs",
+        "answer_type": "radio",
+        "options": ["RUL", "LUL", "RLL", "LLL"]
       },
       {
         "id": "range_of_motion_active",
@@ -81,6 +81,36 @@
         "question": "Muscle Strength",
         "answer_type": "radio",
         "options": ["Normal", "Weak"]
+      },
+      {
+        "id": "reflexes",
+        "question": "Reflexes",
+        "answer_type": "radio",
+        "options": ["Normal", "Weak"]
+      },
+      {
+        "id": "muscle_tone",
+        "question": "Muscle Tone",
+        "answer_type": "radio",
+        "options": ["Normal", "Flaccid", "Dystonia", "Atonia", "Hypertonia", "Other"]
+      },
+      {
+        "id": "dermatome_level",
+        "question": "Dermatome Level",
+        "answer_type": "radio",
+        "options": ["xxxxxx","xxxx"]
+      },
+      {
+        "id": "myotome_level",
+        "question": "Myotome Level",
+        "answer_type": "radio",
+        "options": ["xxxxxx","xxxx"]
+      },
+      {
+        "id": "gait_assessment",
+        "question": "Gait Assessment",
+        "answer_type": "checkbox",
+        "options": ["Normal", "Ataxic", "Spastic", "Other"]
       },
       {
         "id": "swelling",
@@ -159,6 +189,12 @@
         "question": "Additional assistive/mobility aids required (if any)",
         "answer_type": "text",
         "placeholder": "List assistive or mobility aids"
+      },
+      {
+        "id": "additional_notes",
+        "question": "Additional Notes",
+        "answer_type": "text",
+        "placeholder": "Enter Additional Notes"
       },
       {
         "id": "doctor_prescription",

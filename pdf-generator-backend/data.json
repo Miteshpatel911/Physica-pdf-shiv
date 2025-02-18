@@ -8,38 +8,40 @@
   "primary_complaint": "Advise the patient to avoid prolonged sitting and heavy lifting.Advise the patient to avoid prolonged sitting Advise the patient to avoid prolonged sitting and heavy lifting.",
   "differential_diagnosis": "Advise the patient to avoid prolonged sitting and heavy lifting.",
   "pain_level": "6",
-  "pain_type": [
-    "Sharp shooting",
-    "Dull aching"
+  "neurological_symptoms": [
+    "Weakness",
+    "Coordination Problems"
   ],
-  "affected_joints": [
-    "Hip",
-    "Knee",
-    "Shoulder"
-  ],
-  "range_of_motion_active": "Limited: More than half",
-  "range_of_motion_passive": "Limited: Less than half",
-  "muscle_strength": "Normal",
+  "affected_limbs": "RUL, LUL, RLL, LLL",
+          "muscle_strength": "Weak",
+          "reflexes": "Normal",
+          "range_of_motion_active": "Limited: More than half",
+          "range_of_motion_passive": "Limited: Less than half",
+          "muscle_tone": "Flaccid",
+          "dermatome_level": "xxxxxx",
+          "myotome_level": "xxxxxx",
+          "crepitus": "Yes",
   "physical_findings": [
-          "Swelling: Present",
-          "Tenderness: Yes",
-          "Redness: Yes",
-          "Warmth: No",
-          "Tightness: Yes",
-          "Contracture: No",
-          "Deformity: No",
-          "Crepitus: Yes",
-          "Oedema: Yes: Non-pitting"
+          "Affected Limbs: RUL, LUL, RLL, LLL",
+          "Muscle Strength: Weak",
+          "Reflexes: Normal",
+          "Range of Motion of Affected Area (Active): Limited: More than half",
+          "Range of Motion of Affected Area (Passive): Limited: Less than half",
+          "Muscle Tone: Flaccid",
+          "Dermatome Level: xxxxxx",
+          "Myotome Level: xxxxxx",
+          "Crepitus: Yes"
   ],
-  "functional_limitations": [
-    "Walking",
-    "Lifting",
-    "Sitting"
+  "gait_assessment": [
+    "Normal",
+    "Ataxic",
+    "Spastic"
   ],
-  "treatment_plan": "Advise the patient to avoid prolonged sitting and heavy lifting.Advise the patient to avoid prolonged sitting and heavy lifting.Advise the patient to avoid prolonged sitting and heavy lifting.Advise the patient to avoid prolonged sitting and heavy lifting.Advise the patient to avoid prolonged sitting and heavy lifting.Advise the patient to avoid prolonged sitting and heavy lifting.Advise the patient to avoid prolonged sitting and heavy lifting.Advise the patient to avoid prolonged sitting and heavy lifting.Advise the patient to avoid prolonged sitting and heavy lifting..Advise the patient to avoid prolonged sitting and heavy lifting.",
-  "modalities_used": "Advise the patient to avoid prolonged sitting and heavy lifting.Advise the patient to avoid prolonged sitting",
-  "assistive_aids": "Advise the patient to avoid prolonged sitting and heavy lifting. Advise the patient to avoid prolonged sitting",
-  "doctor_prescription": "Advise the patient to avoid prolonged sitting and heavy lifting. Advise the patient to avoid prolonged sitting and heavy lifting. Advise the patient to avoid prolonged sitting and heavy lifting. Advise the patient to avoid prolonged sitting and heavy lifting.",
+  "treatment_plan": "Advise the patient to avoid prolonged sitting and heavy lifting.",
+  "modalities_used": "Advise the patient to avoid prolonged sitting and heavy lifting.",
+  "assistive_aids": "Advise the patient to avoid prolonged sitting and heavy lifting.",
+  "additional_notes": "Advise the patient to avoid prolonged sitting and heavy lifting.",
+  "doctor_prescription": "Advise the patient to avoid prolonged sitting and heavy lifting.",
   "previous_physiotherapy": "Example 1",
   "physiotherapist_name": "Example 1",
   "signature": "Example 1"
