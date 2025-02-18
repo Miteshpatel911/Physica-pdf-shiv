@@ -35,6 +35,36 @@
         "answer_type": "date"
       },
       {
+        "id": "reason_for_referral",
+        "question": "Reason for Referral",
+        "answer_type": "text",
+        "placeholder": "Describe the Reason for referral"
+      },
+      {
+        "id": "heart_rate",
+        "question": "Heart Rate",
+        "answer_type": "text",
+        "placeholder": "Describe the Heart Rate"
+      },
+      {
+        "id": "respiratory_rate",
+        "question": "Respiratory Rate",
+        "answer_type": "text",
+        "placeholder": "Describe the Respiratory Rate"
+      },
+      {
+        "id": "spO2",
+        "question": "SpO2",
+        "answer_type": "text",
+        "placeholder": "Describe the SPO2"
+      },
+      {
+        "id": "blood_pressure",
+        "question": "Blood Pressure",
+        "answer_type": "text",
+        "placeholder": "Describe the Blood Pressure"
+      },
+      {
         "id": "primary_complaint",
         "question": "Primary Complaint",
         "answer_type": "text",
@@ -47,16 +77,35 @@
         "placeholder": "Enter differential diagnosis"
       },
       {
+        "id": "development_milestones",
+        "question": "Development Milestones",
+         "answer_type": "checkbox",
+        "options": ["Sharp Shooting", "Dull aching"]
+      },
+      {
         "id": "pain_level",
         "question": "Pain Level (0-10)",
         "answer_type": "number",
         "placeholder": "Rate pain level"
       },
+     {
+        "id": "pain_type",
+        "question": "Pain Type",
+        "answer_type": "checkbox",
+        "options": ["Sharp Shooting", "Dull aching"]
+      },
+
       {
         "id": "neurological_symptoms",
         "question": "Neurological Symptoms",
         "answer_type": "checkbox",
         "options": ["Weakness", "Numbness", "Coordination Problems"]
+      },
+      {
+        "id": "affected_joints",
+        "question": "Affected Joint/Joints",
+        "answer_type": "radio",
+        "options": ["Knee", "Hip", "Spine", "Shoulder", "Other"]
       },
       {
         "id": "affected_limbs",
@@ -107,10 +156,34 @@
         "options": ["xxxxxx","xxxx"]
       },
       {
+        "id": "posture",
+        "question": "Posture",
+        "answer_type": "radio",
+        "options": ["Normal","Weak"]
+      },
+      {
+        "id": "tone",
+        "question": "Tone",
+        "answer_type": "radio",
+        "options": ["Normal","Weak"]
+      },
+      {
+        "id": "strength",
+        "question": "Strength",
+        "answer_type": "radio",
+        "options": ["Normal","Weak(1/5)","Weak(2/5)","Weak(3/5)","Weak(4/5)","Weak(5/5)"]
+      },
+      {
         "id": "gait_assessment",
         "question": "Gait Assessment",
         "answer_type": "checkbox",
         "options": ["Normal", "Ataxic", "Spastic", "Other"]
+      },
+      {
+        "id": "functional_limitations",
+        "question": "Functional Limitations",
+        "answer_type": "checkbox",
+        "options": ["Sitting", "Crawling", "Walking"]
       },
       {
         "id": "swelling",
@@ -167,11 +240,30 @@
         "options": ["No", "Yes: Pitting", "Yes: Non-pitting"]
       },
       {
-        "id": "functional_limitations",
-        "question": "Functional Limitations",
-        "answer_type": "checkbox",
-        "options": ["Walking", "Lifting", "Sitting", "Other"]
+        "id": "breath_sounds",
+        "question": "Breath Sounds",
+        "answer_type": "radio",
+        "options": ["Normal", "Noisy", "Uncertain"]
       },
+      {
+        "id": "sputum_color",
+        "question": "Sputum Color",
+        "answer_type": "radio",
+        "options": ["Clear", "Red", "White"]
+      },
+      {
+        "id": "cough",
+        "question": "Cough",
+        "answer_type": "radio",
+        "options": ["Wet", "Dry"]
+      },
+      {
+        "id": "chest_expansion",
+        "question": "Chest Expansion",
+        "answer_type": "radio",
+        "options": ["Normal", "Wide"]
+      },
+      
       {
         "id": "treatment_plan",
         "question": "Treatment Plan",
@@ -187,8 +279,8 @@
       {
         "id": "assistive_aids",
         "question": "Additional assistive/mobility aids required (if any)",
-        "answer_type": "text",
-        "placeholder": "List assistive or mobility aids"
+        "answer_type": "checkbox",
+        "options": ["Walker", "Theraband 2kg"]
       },
       {
         "id": "additional_notes",

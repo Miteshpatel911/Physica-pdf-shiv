@@ -5,13 +5,28 @@
   "gender": "Male",
   "surgery_type": "Advise the patient to avoid prolonged sitting and heavy lifting.",
   "date_of_surgery": "2025-01-03",
-  "primary_complaint": "Advise the patient to avoid prolonged sitting and heavy lifting.Advise the patient to avoid prolonged sitting Advise the patient to avoid prolonged sitting and heavy lifting.",
+  "primary_complaint": "Advise the patient to avoid prolonged sitting and heavy lifting.",
+  "reason_for_referral": "Advise the patient to avoid prolonged sitting and heavy lifting.",
   "differential_diagnosis": "Advise the patient to avoid prolonged sitting and heavy lifting.",
+  "development_milestones": "Achieved",
+  "heart_rate": "70 bpm",
+  "respiratory_rate": "20 breaths/min",
+  "spO2": "99%",
+  "blood_pressure": "120/90mmHg",
+  "functional_limitations": [
+    "Sitting",
+    "Crawling",
+    "Walking"
+  ],
   "pain_level": "6",
   "neurological_symptoms": [
     "Weakness",
     "Coordination Problems"
   ],
+  "breath_sounds" : "Normal",
+  "sputum_color" : "Clear",
+  "cough" : "Wet",
+  "chest_expansion" :"Normal",
   "affected_limbs": "RUL, LUL, RLL, LLL",
           "muscle_strength": "Weak",
           "reflexes": "Normal",
@@ -21,6 +36,13 @@
           "dermatome_level": "xxxxxx",
           "myotome_level": "xxxxxx",
           "crepitus": "Yes",
+
+    "posture": "Normal",
+    "tone": "Normal",
+    "strength": "Weak(2/5)",
+
+    
+
   "physical_findings": [
           "Affected Limbs: RUL, LUL, RLL, LLL",
           "Muscle Strength: Weak",
@@ -39,10 +61,13 @@
   ],
   "treatment_plan": "Advise the patient to avoid prolonged sitting and heavy lifting.",
   "modalities_used": "Advise the patient to avoid prolonged sitting and heavy lifting.",
-  "assistive_aids": "Advise the patient to avoid prolonged sitting and heavy lifting.",
+  "assistive_aids": [
+    "Walker",
+    "Theraband 2kg"
+  ],
   "additional_notes": "Advise the patient to avoid prolonged sitting and heavy lifting.",
   "doctor_prescription": "Advise the patient to avoid prolonged sitting and heavy lifting.",
-  "previous_physiotherapy": "Example 1",
+  "previous_physiotherapy": "None",
   "physiotherapist_name": "Example 1",
   "signature": "Example 1"
 }

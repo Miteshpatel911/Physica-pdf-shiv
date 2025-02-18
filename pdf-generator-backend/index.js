@@ -75,20 +75,42 @@ app.post('/generate-pdf', (req, res) => {
   doc.moveTo(7, 173).lineTo(587, 173).stroke();
 
   // Primary Complaints
-  doc.fontSize(10).text('Primary Complaints', 15, 189);
-  doc.fontSize(8 * scaleFactor).text(data.primary_complaint, 15, 206, { width: 550 });
+  // doc.fontSize(10).text('Primary Complaints', 15, 189);
+  // doc.fontSize(8 * scaleFactor).text(data.primary_complaint, 15, 206, { width: 550 });
 
+  // Reason for Referral
+  
+  doc.fontSize(10).text('Reason for referral', 15, 189);
+  doc.fontSize(8 * scaleFactor).text(data.reason_for_referral, 15, 206, { width: 550 });
   // Diagnosis
-  doc.fontSize(10).text('Diagnosis', 15, 246);
-  doc.fontSize(8 * scaleFactor).text(data.differential_diagnosis, 15, 265, { width: 170 });
+  // doc.fontSize(10).text('Diagnosis', 15, 246);
+  // doc.fontSize(8 * scaleFactor).text(data.differential_diagnosis, 15, 265, { width: 170 });
+  //Vital Signs
+  // doc.fontSize(10).text('Vital Signs', 15, 189);
+
+  // doc.fontSize(8).text('Heart Rate:', 15, 210);
+  // doc.fontSize(8 * scaleFactor).text(data.heart_rate, 61, 210, { width: 550 });
+  // doc.fontSize(8).text('Respiratory Rate:', 15, 228);
+  // doc.fontSize(8 * scaleFactor).text(data.respiratory_rate, 85, 228, { width: 550 });
+  // doc.fontSize(8).text('SpO2:', 15, 246);
+  // doc.fontSize(8 * scaleFactor).text(data.spO2, 42, 246, { width: 550 });
+  // doc.fontSize(8).text('Blood Pressure:', 15, 265);
+  // doc.fontSize(8 * scaleFactor).text(data.blood_pressure, 80, 265, { width: 550 });
+
+  // Development Milestones
+  doc.fontSize(10).text('Development Milestones', 15, 246);
+  doc.fontSize(8 * scaleFactor).text(data.development_milestones, 15, 265, { width: 170 });
 
   // Pain Level and Pain Type
-  doc.fontSize(10).text(`Pain Level: ${data.pain_level}/10`, 202, 246);
-  doc.image(painLevelImagePath, 202, 265, { width: 135 });
+  // doc.fontSize(10).text(`Pain Level: ${data.pain_level}/10`, 385, 312);
+  // doc.image(painLevelImagePath, 385, 330, { width: 135 });
+  //Pain level Pediac
+  doc.fontSize(10).text(`Pain Level: ${data.pain_level}/10`, 200, 248);
+  doc.image(painLevelImagePath, 200, 267, { width: 135 });
 
-  doc.fontSize(10).text('Neurological Symptoms', 388, 246);
-const painTypeText = data.neurological_symptoms.join(', '); // Join the pain_type values with a comma
-doc.fontSize(8 * scaleFactor).text(painTypeText, 388, 265, { width: 170 }); // Render the joined string on one line
+//   doc.fontSize(10).text('Neurological Symptoms', 388, 246);
+// const painTypeText = data.neurological_symptoms.join(', '); // Join the pain_type values with a comma
+// doc.fontSize(8 * scaleFactor).text(painTypeText, 388, 265, { width: 170 }); // Render the joined string on one line
 
  // Horizontal line Section 2
  doc.moveTo(7, 300).lineTo(587, 300).stroke();  
@@ -99,15 +121,11 @@ doc.fontSize(8 * scaleFactor).text(painTypeText, 388, 265, { width: 170 }); // R
 
    // Collect physical findings dynamically from the new fields
    const physicalFindings = [
-     `Affected Limbs: ${data.affected_limbs}`,
-     `Muscle Strength: ${data.muscle_strength}`,
-     `Reflexes: ${data.reflexes}`,
+     `Posture: ${data.posture}`,
+     `Tone: ${data.tone}`,
+     `Strength: ${data.strength}`,
      `ROM(Active): ${data.range_of_motion_active}`,
      `ROM(Passive): ${data.range_of_motion_passive}`,
-     `Muscle Tone: ${data.muscle_tone}`,
-     `Dermatome Level: ${data.dermatome_level}`,
-     `Myotome Level: ${data.myotome_level}`,
-     `Crepitus: ${data.crepitus}`,
    ];
  
    const startX = [15, 202, 388]; // X coordinates for the three columns
@@ -126,6 +144,18 @@ doc.fontSize(8 * scaleFactor).text(painTypeText, 388, 265, { width: 170 }); // R
      doc.fontSize(8 * scaleFactor).text(finding, xPos, yPos);
    });
 
+   // Respiratory Assessment Findings
+  //  doc.fontSize(10).text('Respiratory Findings', 15, 312);
+
+  //  doc.fontSize(8).text('Breath Sounds:', 15, 334);
+  //  doc.fontSize(8 * scaleFactor).text(data.breath_sounds, 77, 334, { width: 550 });
+  //  doc.fontSize(8).text('Sputum Color:', 15, 352);
+  //  doc.fontSize(8 * scaleFactor).text(data.sputum_color, 74, 32, { width: 550 });
+  //  doc.fontSize(8).text('Cough:', 15, 370);
+  //  doc.fontSize(8 * scaleFactor).text(data.cough, 46, 370, { width: 550 });
+  //  doc.fontSize(8).text('Chest Expansion', 15, 388);
+  //  doc.fontSize(8 * scaleFactor).text(data.chest_expansion, 80, 388, { width: 550 });
+
   // // Add Positive Special Tests
   // doc.fontSize(10).text('Positive Special Tests', 15, 450).fontSize(10);
   // doc.fontSize(8 * scaleFactor).text('McMurray test - Mild Pain', 15, 472, { width: 170 });// Add dynamically if available
@@ -133,44 +163,58 @@ doc.fontSize(8 * scaleFactor).text(painTypeText, 388, 265, { width: 170 }); // R
   // doc.fontSize(10).text('Neurological Symptoms', 388, 450);
   // doc.fontSize(8 * scaleFactor).text('None', 388, 472, { width: 170 });// Add dynamically if available
 
-  doc.fontSize(10).text('Gait Assessment', 15, 413).fontSize(10);
-  const gaitAssessment = data.gait_assessment.join(', '); // Join the pain_type values with a comma
-  doc.fontSize(8 * scaleFactor).text(gaitAssessment, 15, 435, { width: 170 }); // Render the joined string on one line
-
+  // doc.fontSize(10).text('Gait Assessment', 15, 413).fontSize(10);
+  // const gaitAssessment = data.gait_assessment.join(', '); // Join the pain_type values with a comma
+  // doc.fontSize(8 * scaleFactor).text(gaitAssessment, 15, 435, { width: 170 }); // Render the joined string on one line
+   //Functional limitaiton Cardo
+  // doc.fontSize(10).text('Functional Limitations', 200, 312).fontSize(10);
+  // const functionalLimitations = data.functional_limitations.join(', '); // Join the pain_type values with a comma
+  // doc.fontSize(8 * scaleFactor).text(functionalLimitations, 200, 332, { width: 170 }); // Render the joined string on one line
+//Functional limitaiton pediac
+  doc.fontSize(10).text('Functional Limitations', 15, 406).fontSize(10);
+  const functionalLimitations = data.functional_limitations.join(', '); // Join the pain_type values with a comma
+  doc.fontSize(8 * scaleFactor).text(functionalLimitations, 15, 427, { width: 170 }); // Render the joined string on one line
  // Functional Limitations
 // doc.fontSize(10).text('Functional Limitations', 202, 450);
 // const funlimTypeText = data.functional_limitations.join(', ');
 // doc.fontSize(8 * scaleFactor).text(funlimTypeText, 202, 472, { width: 170 });
 
+
+
  // Horizontal line Section 3
- doc.moveTo(7, 512).lineTo(587, 512).stroke();  
+ doc.moveTo(7, 462).lineTo(587, 462).stroke();  
 
   // Treatment Duration
-  doc.fontSize(10).text('Treatment Duration', 15, 530);
-  doc.fontSize(8 * scaleFactor).text('6 weeks|2 to 3 sessions per week.', 15, 547, { width: 170 });
+  doc.fontSize(10).text('Treatment Duration', 15, 480);
+  doc.fontSize(8 * scaleFactor).text('6 weeks|2 to 3 sessions per week.', 15, 498, { width: 170 });
 
   // Modalities
-  doc.fontSize(10).text('Modalities', 202, 530);
-  doc.fontSize(8 * scaleFactor).text(data.modalities_used, 202, 547, { width: 170 });
+  doc.fontSize(10).text('Modalities', 202, 480);
+  doc.fontSize(8 * scaleFactor).text(data.modalities_used, 202, 498, { width: 170 });
 
   // Additional Assistive Aids
-  doc.fontSize(10).text('Additional Assistive Aids', 388, 530);
-  doc.fontSize(8 * scaleFactor).text(data.assistive_aids, 388, 547, { width: 170 });
+  doc.fontSize(10).text('Additional Assistive Aids', 388, 480);
+  const additonalAssitive = data.assistive_aids.join(', ');
+  doc.fontSize(8 * scaleFactor).text(additonalAssitive, 388, 498, { width: 170 });
 
   //Treatment Plan
-  doc.fontSize(10).text('Treatment Plan', 15, 575);
-  doc.fontSize(8 * scaleFactor).text(data.treatment_plan, 15, 592, { width: 550 });
+  doc.fontSize(10).text('Treatment Plan', 15, 526);
+  doc.fontSize(8 * scaleFactor).text(data.treatment_plan, 15, 545, { width: 550 });
 
   // Horizontal line Section 3
-  doc.moveTo(7, 626).lineTo(587, 626).stroke(); 
+  doc.moveTo(7, 590).lineTo(587, 590).stroke(); 
 
   // Additional Notes
-  doc.fontSize(10).text('Additional Notes', 15, 642);
-  doc.fontSize(8 * scaleFactor).text(data.additional_notes, 15, 658, { width: 550 });
+  doc.fontSize(10).text('Additional Notes', 15, 606);
+  doc.fontSize(8 * scaleFactor).text(data.additional_notes, 15, 624, { width: 550 });
 
-  // Additional Notes
-  doc.fontSize(10).text(`Doctor's Prescription`, 15, 698);
-  doc.fontSize(8 * scaleFactor).text(data.doctor_prescription, 15, 716, { width: 550 });
+  // Doctor's Prescription
+  doc.fontSize(10).text(`Doctor's Prescription`, 15, 664);
+  doc.fontSize(8 * scaleFactor).text(data.doctor_prescription, 15, 682, { width: 550 });
+
+   // Previously Physiotherapy Taken
+   doc.fontSize(10).text(`Previously Physiotherapy Taken`, 15, 722);
+   doc.fontSize(8 * scaleFactor).text(data.previous_physiotherapy, 15, 739, { width: 550 });
   
 
   // Footer
