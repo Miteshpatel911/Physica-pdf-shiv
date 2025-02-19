@@ -195,7 +195,7 @@
         "id": "functional_limitations",
         "question": "Functional Limitations",
         "answer_type": "checkbox",
-        "options": ["Sitting", "Crawling", "Walking"]
+        "options": ["Sitting", "Walking"]
       },
       {
         "id": "swelling",
@@ -281,6 +281,12 @@
         "question": "Treatment Plan",
         "answer_type": "text",
         "placeholder": "Describe the treatment plan"
+      },
+      {
+        "id": "treatment_goals",
+        "question": "Treatment Goals",
+        "answer_type": "text",
+        "placeholder": "Describe the treatment goals"
       },
       {
         "id": "modalities_used",

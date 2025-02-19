@@ -65,7 +65,7 @@ app.post('/generate-pdf', (req, res) => {
   doc.fontSize(8 * scaleFactor).text(`Patient ID: 1012`, 202, 117); // Add Patient ID dynamically if available
   doc.fontSize(8 * scaleFactor).text(`Date Of Report: 11/01/2025`, 388, 117);
 
-  doc.fontSize(8 * scaleFactor).text(`Surgery Type: ${data.surgery_type}`, 15, 138, { width: 170 });
+  doc.fontSize(8 * scaleFactor).text(`Surgery: ${data.surgery_type}`, 15, 138, { width: 170 });
   doc.fontSize(8 * scaleFactor).text(`Date Of Surgery: ${data.date_of_surgery}`, 202, 138);
 
   // Horizontal line Section 1
@@ -150,11 +150,11 @@ app.post('/generate-pdf', (req, res) => {
    doc.fontSize(8).text('Breath Sounds:', 15, 334);
    doc.fontSize(8 * scaleFactor).text(data.breath_sounds, 77, 334, { width: 550 });
    doc.fontSize(8).text('Sputum Color:', 15, 352);
-   doc.fontSize(8 * scaleFactor).text(data.sputum_color, 74, 32, { width: 550 });
+   doc.fontSize(8 * scaleFactor).text(data.sputum_color, 74, 352, { width: 550 });
    doc.fontSize(8).text('Cough:', 15, 370);
    doc.fontSize(8 * scaleFactor).text(data.cough, 46, 370, { width: 550 });
-   doc.fontSize(8).text('Chest Expansion', 15, 388);
-   doc.fontSize(8 * scaleFactor).text(data.chest_expansion, 80, 388, { width: 550 });
+   doc.fontSize(8).text('Chest Expansion:', 15, 388);
+   doc.fontSize(8 * scaleFactor).text(data.chest_expansion, 85, 388, { width: 550 });
 
   // // Add Positive Special Tests
   // doc.fontSize(10).text('Positive Special Tests', 15, 450).fontSize(10);
@@ -169,7 +169,7 @@ app.post('/generate-pdf', (req, res) => {
    //Functional limitaiton Cardo
   doc.fontSize(10).text('Functional Limitations', 200, 312).fontSize(10);
   const functionalLimitations = data.functional_limitations.join(', '); // Join the pain_type values with a comma
-  doc.fontSize(8 * scaleFactor).text(functionalLimitations, 200, 332, { width: 170 }); // Render the joined string on one line
+  doc.fontSize(8 * scaleFactor).text(functionalLimitations, 200, 334, { width: 550 }); // Render the joined string on one line
 //Functional limitaiton pediac
 //   doc.fontSize(10).text('Functional Limitations', 15, 406).fontSize(10);
 //   const functionalLimitations = data.functional_limitations.join(', '); // Join the pain_type values with a comma
@@ -184,30 +184,34 @@ app.post('/generate-pdf', (req, res) => {
 
    doc.fontSize(8).text('Mobility:', 200, 385);
    doc.fontSize(8 * scaleFactor).text(data.mobility, 236, 385, { width: 550 });
-   doc.fontSize(8).text('Fatigue:', 200, 404);
-   doc.fontSize(8 * scaleFactor).text(data.fatigue_level, 236, 404, { width: 550 });
+   doc.fontSize(8).text('Fatigue Level:', 200, 404);
+   doc.fontSize(8 * scaleFactor).text(data.fatigue_level, 256, 404, { width: 550 });
 
 
 
  // Horizontal line Section 3
- doc.moveTo(7, 462).lineTo(587, 462).stroke();  
+ doc.moveTo(7, 430).lineTo(587, 430).stroke();  
 
   // Treatment Duration
-  doc.fontSize(10).text('Treatment Duration', 15, 480);
-  doc.fontSize(8 * scaleFactor).text('6 weeks|2 to 3 sessions per week.', 15, 498, { width: 170 });
+  doc.fontSize(10).text('Treatment Duration', 15, 448);
+  doc.fontSize(8 * scaleFactor).text('6 weeks|2 to 3 sessions per week.', 15, 465, { width: 170 });
 
-  // Modalities
-  doc.fontSize(10).text('Modalities', 202, 480);
-  doc.fontSize(8 * scaleFactor).text(data.modalities_used, 202, 498, { width: 170 });
+  // Treatment Goals
+  doc.fontSize(10).text('Treatment Goals', 15, 494);
+  doc.fontSize(8 * scaleFactor).text(data.treatment_goals, 15, 512, { width: 500 });
+
+  // // Modalities
+  // doc.fontSize(10).text('Modalities', 202, 480);
+  // doc.fontSize(8 * scaleFactor).text(data.modalities_used, 202, 498, { width: 170 });
 
   // Additional Assistive Aids
-  doc.fontSize(10).text('Additional Assistive Aids', 388, 480);
+  doc.fontSize(10).text('Additional Assistive Aids', 200, 448);
   const additonalAssitive = data.assistive_aids.join(', ');
-  doc.fontSize(8 * scaleFactor).text(additonalAssitive, 388, 498, { width: 170 });
+  doc.fontSize(8 * scaleFactor).text(additonalAssitive, 200, 465, { width: 170 });
 
   //Treatment Plan
-  doc.fontSize(10).text('Treatment Plan', 15, 526);
-  doc.fontSize(8 * scaleFactor).text(data.treatment_plan, 15, 545, { width: 550 });
+  doc.fontSize(10).text('Treatment Plan', 15, 542);
+  doc.fontSize(8 * scaleFactor).text(data.treatment_plan, 15, 560, { width: 550 });
 
   // Horizontal line Section 3
   doc.moveTo(7, 590).lineTo(587, 590).stroke(); 
@@ -221,8 +225,8 @@ app.post('/generate-pdf', (req, res) => {
   doc.fontSize(8 * scaleFactor).text(data.doctor_prescription, 15, 682, { width: 550 });
 
    // Previously Physiotherapy Taken
-   doc.fontSize(10).text(`Previously Physiotherapy Taken`, 15, 722);
-   doc.fontSize(8 * scaleFactor).text(data.previous_physiotherapy, 15, 739, { width: 550 });
+   doc.fontSize(10).text(`Previously Physiotherapy taken`, 15, 721);
+   doc.fontSize(8 * scaleFactor).text(data.previous_physiotherapy, 15, 738, { width: 550 });
   
 
   // Footer
