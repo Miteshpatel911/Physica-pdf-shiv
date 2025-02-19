@@ -3,7 +3,7 @@
   "date": "2025-01-08",
   "age": "32",
   "gender": "Male",
-  "surgery_type": "Advise the patient to avoid prolonged sitting and heavy lifting.",
+  "surgery_type": "Knee Replacement",
   "date_of_surgery": "2025-01-03",
   "primary_complaint": "Advise the patient to avoid prolonged sitting and heavy lifting.",
   "reason_for_referral": "Advise the patient to avoid prolonged sitting and heavy lifting.",
@@ -41,7 +41,8 @@
     "tone": "Normal",
     "strength": "Weak(2/5)",
 
-    
+    "mobility": "Independent",
+    "fatigue_level": "2/10",
 
   "physical_findings": [
           "Affected Limbs: RUL, LUL, RLL, LLL",

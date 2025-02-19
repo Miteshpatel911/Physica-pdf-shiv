@@ -65,8 +65,8 @@ app.post('/generate-pdf', (req, res) => {
   doc.fontSize(8 * scaleFactor).text(`Patient ID: 1012`, 202, 117); // Add Patient ID dynamically if available
   doc.fontSize(8 * scaleFactor).text(`Date Of Report: 11/01/2025`, 388, 117);
 
-  // doc.fontSize(8 * scaleFactor).text(`Surgery Type: ${data.surgery_type}`, 15, 138, { width: 170 });
-  // doc.fontSize(8 * scaleFactor).text(`Date Of Surgery: ${data.date_of_surgery}`, 202, 138);
+  doc.fontSize(8 * scaleFactor).text(`Surgery Type: ${data.surgery_type}`, 15, 138, { width: 170 });
+  doc.fontSize(8 * scaleFactor).text(`Date Of Surgery: ${data.date_of_surgery}`, 202, 138);
 
   // Horizontal line Section 1
   doc.strokeColor('#FF9318');
@@ -80,33 +80,33 @@ app.post('/generate-pdf', (req, res) => {
 
   // Reason for Referral
   
-  doc.fontSize(10).text('Reason for referral', 15, 189);
-  doc.fontSize(8 * scaleFactor).text(data.reason_for_referral, 15, 206, { width: 550 });
+  doc.fontSize(10).text('Reason for referral', 200, 189);
+  doc.fontSize(8 * scaleFactor).text(data.reason_for_referral, 200, 206, { width: 550 });
   // Diagnosis
   // doc.fontSize(10).text('Diagnosis', 15, 246);
   // doc.fontSize(8 * scaleFactor).text(data.differential_diagnosis, 15, 265, { width: 170 });
   //Vital Signs
-  // doc.fontSize(10).text('Vital Signs', 15, 189);
+  doc.fontSize(10).text('Vital Signs', 15, 189);
 
-  // doc.fontSize(8).text('Heart Rate:', 15, 210);
-  // doc.fontSize(8 * scaleFactor).text(data.heart_rate, 61, 210, { width: 550 });
-  // doc.fontSize(8).text('Respiratory Rate:', 15, 228);
-  // doc.fontSize(8 * scaleFactor).text(data.respiratory_rate, 85, 228, { width: 550 });
-  // doc.fontSize(8).text('SpO2:', 15, 246);
-  // doc.fontSize(8 * scaleFactor).text(data.spO2, 42, 246, { width: 550 });
-  // doc.fontSize(8).text('Blood Pressure:', 15, 265);
-  // doc.fontSize(8 * scaleFactor).text(data.blood_pressure, 80, 265, { width: 550 });
+  doc.fontSize(8).text('Heart Rate:', 15, 210);
+  doc.fontSize(8 * scaleFactor).text(data.heart_rate, 61, 210, { width: 550 });
+  doc.fontSize(8).text('Respiratory Rate:', 15, 228);
+  doc.fontSize(8 * scaleFactor).text(data.respiratory_rate, 85, 228, { width: 550 });
+  doc.fontSize(8).text('SpO2:', 15, 246);
+  doc.fontSize(8 * scaleFactor).text(data.spO2, 42, 246, { width: 550 });
+  doc.fontSize(8).text('Blood Pressure:', 15, 265);
+  doc.fontSize(8 * scaleFactor).text(data.blood_pressure, 80, 265, { width: 550 });
 
   // Development Milestones
-  doc.fontSize(10).text('Development Milestones', 15, 246);
-  doc.fontSize(8 * scaleFactor).text(data.development_milestones, 15, 265, { width: 170 });
+  // doc.fontSize(10).text('Development Milestones', 15, 246);
+  // doc.fontSize(8 * scaleFactor).text(data.development_milestones, 15, 265, { width: 170 });
 
   // Pain Level and Pain Type
-  // doc.fontSize(10).text(`Pain Level: ${data.pain_level}/10`, 385, 312);
-  // doc.image(painLevelImagePath, 385, 330, { width: 135 });
+  doc.fontSize(10).text(`Pain Level: ${data.pain_level}/10`, 385, 312);
+  doc.image(painLevelImagePath, 385, 330, { width: 135 });
   //Pain level Pediac
-  doc.fontSize(10).text(`Pain Level: ${data.pain_level}/10`, 200, 248);
-  doc.image(painLevelImagePath, 200, 267, { width: 135 });
+  // doc.fontSize(10).text(`Pain Level: ${data.pain_level}/10`, 200, 248);
+  // doc.image(painLevelImagePath, 200, 267, { width: 135 });
 
 //   doc.fontSize(10).text('Neurological Symptoms', 388, 246);
 // const painTypeText = data.neurological_symptoms.join(', '); // Join the pain_type values with a comma
@@ -117,44 +117,44 @@ app.post('/generate-pdf', (req, res) => {
 
 
    // Physical Assessment Findings
-   doc.fontSize(10).text('Physical Assessment Findings', 15, 318);
+  //  doc.fontSize(10).text('Physical Assessment Findings', 15, 318);
 
-   // Collect physical findings dynamically from the new fields
-   const physicalFindings = [
-     `Posture: ${data.posture}`,
-     `Tone: ${data.tone}`,
-     `Strength: ${data.strength}`,
-     `ROM(Active): ${data.range_of_motion_active}`,
-     `ROM(Passive): ${data.range_of_motion_passive}`,
-   ];
+  //  // Collect physical findings dynamically from the new fields
+  //  const physicalFindings = [
+  //    `Posture: ${data.posture}`,
+  //    `Tone: ${data.tone}`,
+  //    `Strength: ${data.strength}`,
+  //    `ROM(Active): ${data.range_of_motion_active}`,
+  //    `ROM(Passive): ${data.range_of_motion_passive}`,
+  //  ];
  
-   const startX = [15, 202, 388]; // X coordinates for the three columns
-   const startY = 340; // Initial Y coordinate
+  //  const startX = [15, 202, 388]; // X coordinates for the three columns
+  //  const startY = 340; // Initial Y coordinate
  
-   physicalFindings.forEach((finding, index) => {
-     // Determine the column (X) and row (Y)
-     const column = index % 3; // This will determine the column: 0, 1, 2
-     const row = Math.floor(index / 3); // This will determine the row: 0, 1, 2, etc.
+  //  physicalFindings.forEach((finding, index) => {
+  //    // Determine the column (X) and row (Y)
+  //    const column = index % 3; // This will determine the column: 0, 1, 2
+  //    const row = Math.floor(index / 3); // This will determine the row: 0, 1, 2, etc.
  
-     // Calculate the X and Y position
-     const xPos = startX[column]; // Use the column to get the X position
-     const yPos = startY + row * 20; // Add row offset to Y position
+  //    // Calculate the X and Y position
+  //    const xPos = startX[column]; // Use the column to get the X position
+  //    const yPos = startY + row * 20; // Add row offset to Y position
  
-     // Add the finding text at the calculated position
-     doc.fontSize(8 * scaleFactor).text(finding, xPos, yPos);
-   });
+  //    // Add the finding text at the calculated position
+  //    doc.fontSize(8 * scaleFactor).text(finding, xPos, yPos);
+  //  });
 
    // Respiratory Assessment Findings
-  //  doc.fontSize(10).text('Respiratory Findings', 15, 312);
+   doc.fontSize(10).text('Respiratory Findings', 15, 312);
 
-  //  doc.fontSize(8).text('Breath Sounds:', 15, 334);
-  //  doc.fontSize(8 * scaleFactor).text(data.breath_sounds, 77, 334, { width: 550 });
-  //  doc.fontSize(8).text('Sputum Color:', 15, 352);
-  //  doc.fontSize(8 * scaleFactor).text(data.sputum_color, 74, 32, { width: 550 });
-  //  doc.fontSize(8).text('Cough:', 15, 370);
-  //  doc.fontSize(8 * scaleFactor).text(data.cough, 46, 370, { width: 550 });
-  //  doc.fontSize(8).text('Chest Expansion', 15, 388);
-  //  doc.fontSize(8 * scaleFactor).text(data.chest_expansion, 80, 388, { width: 550 });
+   doc.fontSize(8).text('Breath Sounds:', 15, 334);
+   doc.fontSize(8 * scaleFactor).text(data.breath_sounds, 77, 334, { width: 550 });
+   doc.fontSize(8).text('Sputum Color:', 15, 352);
+   doc.fontSize(8 * scaleFactor).text(data.sputum_color, 74, 32, { width: 550 });
+   doc.fontSize(8).text('Cough:', 15, 370);
+   doc.fontSize(8 * scaleFactor).text(data.cough, 46, 370, { width: 550 });
+   doc.fontSize(8).text('Chest Expansion', 15, 388);
+   doc.fontSize(8 * scaleFactor).text(data.chest_expansion, 80, 388, { width: 550 });
 
   // // Add Positive Special Tests
   // doc.fontSize(10).text('Positive Special Tests', 15, 450).fontSize(10);
@@ -167,17 +167,25 @@ app.post('/generate-pdf', (req, res) => {
   // const gaitAssessment = data.gait_assessment.join(', '); // Join the pain_type values with a comma
   // doc.fontSize(8 * scaleFactor).text(gaitAssessment, 15, 435, { width: 170 }); // Render the joined string on one line
    //Functional limitaiton Cardo
-  // doc.fontSize(10).text('Functional Limitations', 200, 312).fontSize(10);
-  // const functionalLimitations = data.functional_limitations.join(', '); // Join the pain_type values with a comma
-  // doc.fontSize(8 * scaleFactor).text(functionalLimitations, 200, 332, { width: 170 }); // Render the joined string on one line
-//Functional limitaiton pediac
-  doc.fontSize(10).text('Functional Limitations', 15, 406).fontSize(10);
+  doc.fontSize(10).text('Functional Limitations', 200, 312).fontSize(10);
   const functionalLimitations = data.functional_limitations.join(', '); // Join the pain_type values with a comma
-  doc.fontSize(8 * scaleFactor).text(functionalLimitations, 15, 427, { width: 170 }); // Render the joined string on one line
- // Functional Limitations
+  doc.fontSize(8 * scaleFactor).text(functionalLimitations, 200, 332, { width: 170 }); // Render the joined string on one line
+//Functional limitaiton pediac
+//   doc.fontSize(10).text('Functional Limitations', 15, 406).fontSize(10);
+//   const functionalLimitations = data.functional_limitations.join(', '); // Join the pain_type values with a comma
+//   doc.fontSize(8 * scaleFactor).text(functionalLimitations, 15, 427, { width: 170 }); // Render the joined string on one line
+//  // Functional Limitations
 // doc.fontSize(10).text('Functional Limitations', 202, 450);
 // const funlimTypeText = data.functional_limitations.join(', ');
 // doc.fontSize(8 * scaleFactor).text(funlimTypeText, 202, 472, { width: 170 });
+
+  //Functional Status
+  doc.fontSize(10).text('Functional Status', 200, 366);
+
+   doc.fontSize(8).text('Mobility:', 200, 385);
+   doc.fontSize(8 * scaleFactor).text(data.mobility, 236, 385, { width: 550 });
+   doc.fontSize(8).text('Fatigue:', 200, 404);
+   doc.fontSize(8 * scaleFactor).text(data.fatigue_level, 236, 404, { width: 550 });
 
 
 
